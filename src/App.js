@@ -1,8 +1,7 @@
 import React from 'react';
 import PokeList from './components/PokeList';
-import Pokemon from './components/Pokemon';
 
-const pokemon = [
+const data = [
   { "id": 1, "name": "bulbasaur", "types": ["poison", "grass"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/1.png" },
   { "id": 2, "name": "ivysaur", "types": ["poison", "grass"], "evolution": "bulbasaur", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/2.png" },
   { "id": 3, "name": "venusaur", "types": ["poison", "grass"], "evolution": "ivysaur", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/3.png" },
@@ -20,8 +19,7 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <h1 className="title">Mi lista de pokemon</h1>
-        <PokeList />
-        <Pokemon />
+        <PokeList dataList={data} />
       </React.Fragment>
     );
   }
