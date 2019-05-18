@@ -19,22 +19,13 @@ class App extends React.Component {
     const triggerId = parseInt(event.currentTarget.id);
     this.setState((prevState, props) => {
       const newState = { ...prevState.all };
-
-      newState.fav.map((item, index) => {
-        if (newState.fav[index] !== triggerId) {
-          newState.fav.push(triggerId);
-        } else {
-          newState.fav.splice(index);
-        }
-        return { all: newState };
-      })
-
-
-      // if (!newState.fav.includes(triggerId)) {
-      //   newState.fav.push(triggerId);
-      //   return { all: newState };
-      // }
-
+      if (!newState.fav.includes(triggerId)) {
+        newState.fav.push(triggerId);
+      } else {
+        const index = newState.fav.indexOf(triggerId);
+        newState.fav.splice(index, 1);
+      }
+      return { all: newState };
     });
   }
 

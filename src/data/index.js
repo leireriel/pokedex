@@ -8,7 +8,10 @@ const dataPokemon = [
   { "id": 7, "name": "squirtle", "types": ["water"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/7.png" },
   { "id": 8, "name": "wartortle", "types": ["water"], "evolution": "squirtle", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/8.png" },
   { "id": 9, "name": "blastoise", "types": ["water"], "evolution": "wartortle", "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/9.png" },
-  { "id": 10, "name": "caterpie", "types": ["bug"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" }
+  { "id": 10, "name": "caterpie", "types": ["bug"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" },
+  { "id": 11, "name": "caterpie", "types": ["bug"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" },  
+  { "id": 12, "name": "caterpie", "types": ["bug"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" },
+  { "id": 13, "name": "caterpie", "types": ["bug"], "evolution": null, "url": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/10.png" }
 ]
 
 export default dataPokemon;
