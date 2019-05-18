@@ -5,16 +5,21 @@ import './PokeList.css';
 
 class PokeList extends React.Component {
   render() {
+    const { data, action } = this.props;
     return (
       <ol className="list">
-        {this.props.dataList.map((item) => {
+        {data.map((item) => {
           return (
-            <li className="list__item" key={item.id}>
-            <Pokemon 
-              name={item.name}
-              types={item.types}
-              img={item.url}
-            />
+            <li
+              className="list__item"
+              key={item.id}
+              id={item.id - 1}
+              onClick={action}>
+              <Pokemon
+                name={item.name}
+                types={item.types}
+                img={item.url}
+              />
             </li>
           );
         })}
