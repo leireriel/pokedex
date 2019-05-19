@@ -1,0 +1,10 @@
+.form__input {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input__pokemon {
+  font-size: 20px;
+  color: blue;
+}

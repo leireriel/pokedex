@@ -9,21 +9,23 @@ class PokeList extends React.Component {
     const { action } = this.props;
     return (
       <ol className="list">
-        {data.map((item) => {
-          return (
-            <li
-              className={`list__item ${fav.includes(item.id - 1) && 'fav__pokemon'}`}
-              key={item.id}
-              id={item.id - 1}
-              onClick={action}>
-              <Pokemon
-                name={item.name}
-                types={item.types}
-                img={item.url}
-              />
-            </li>
-          );
-        })}
+        {data
+          // .filter(item => item.includes(input.value))
+          .map((item) => {
+            return (
+              <li
+                className={`list__item ${fav.includes(item.id - 1) && 'fav__pokemon'}`}
+                key={item.id}
+                id={item.id - 1}
+                onClick={action}>
+                <Pokemon
+                  name={item.name}
+                  types={item.types}
+                  img={item.url}
+                />
+              </li>
+            );
+          })}
       </ol>
     );
   }

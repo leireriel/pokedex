@@ -1,4 +1,5 @@
 import React from 'react';
+import SearchPokemon from './components/SearchPokemon';
 import PokeList from './components/PokeList';
 import dataPokemon from './data';
 import './App.css';
@@ -9,10 +10,21 @@ class App extends React.Component {
     this.state = {
       all: {
         data: dataPokemon,
+        search: null,
         fav: []
       }
     }
+    this.handlePokemon = this.handlePokemon.bind(this);
     this.favPokemon = this.favPokemon.bind(this);
+  }
+
+  handlePokemon(event) {
+    const triggerValue = event.currentTarget.value;
+    this.setState((prevState, props) => {
+      const newState = { ...prevState.all };
+      newState.search = triggerValue;
+      return { all: newState };
+    });
   }
 
   favPokemon(event) {
@@ -33,6 +45,9 @@ class App extends React.Component {
     return (
       <React.Fragment>
         <h1 className="title">Pokédex</h1>
+        <SearchPokemon
+          action={this.handlePokemon}
+        />
         <PokeList
           state={this.state.all}
           action={this.favPokemon}

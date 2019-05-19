@@ -5,7 +5,6 @@ body {
 
 .title {
   font-family: 'Courier New', Courier, monospace;
-  src: URL('./pokemonfont/PokemonHollow.ttf') format('truetype');
   text-align: center;
   color: red;
 }
