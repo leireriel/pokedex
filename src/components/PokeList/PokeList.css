@@ -7,7 +7,8 @@
 
 .list__item {
   list-style: none;
-  border: 1px solid orange;
+  border: 1px solid red;
+  background-color: white;
   width: 180px;
   height: 250px;
   border-radius: 10px;
@@ -16,4 +17,9 @@
   align-items: center;
   margin: 20px;
   cursor: pointer;
+}
+
+.fav__pokemon {
+  background: url('./images/pokedex.png');
+  background-size: cover;
 }
