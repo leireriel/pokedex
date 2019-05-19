@@ -5,19 +5,31 @@ import './PokeList.css';
 
 class PokeList extends React.Component {
   render() {
+    const { data, search, fav } = this.props.state;
+    const { action } = this.props;
     return (
       <ol className="list">
-        {this.props.dataList.map((item) => {
-          return (
-            <li className="list__item" key={item.id}>
-            <Pokemon 
-              name={item.name}
-              types={item.types}
-              img={item.url}
-            />
-            </li>
-          );
-        })}
+        {data
+          .filter(item => 
+            search === null ? item :
+            item.name.includes(search) ? item.name : 
+            null
+            )
+          .map((item) => {
+            return (
+              <li
+                className={`list__item ${fav.includes(item.id - 1) && 'fav__pokemon'}`}
+                key={item.id}
+                id={item.id - 1}
+                onClick={action}>
+                <Pokemon
+                  name={item.name}
+                  types={item.types}
+                  img={item.url}
+                />
+              </li>
+            );
+          })}
       </ol>
     );
   }
