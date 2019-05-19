@@ -5,12 +5,16 @@ import './PokeList.css';
 
 class PokeList extends React.Component {
   render() {
-    const { data, fav } = this.props.state;
+    const { data, search, fav } = this.props.state;
     const { action } = this.props;
     return (
       <ol className="list">
         {data
-          // .filter(item => item.includes(input.value))
+          .filter(item => 
+            search === null ? item :
+            item.name.includes(search) ? item.name : 
+            null
+            )
           .map((item) => {
             return (
               <li

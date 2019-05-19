@@ -3,14 +3,15 @@ import './SearchPokemon.css';
 
 class SearchPokemon extends React.Component {
   render() {
-    const {action} = this.props;
+    const { action } = this.props;
     return (
-      <form
+      <div className="form__wrapper">
+        <form
           className="form__input"
           action="">
           <label
             htmlFor="pokemon">
-            Busca por nombre o tipo de Pokemon
+            Busca por nombre de Pokemon
           </label>
           <input
             className="input__pokemon"
@@ -19,6 +20,7 @@ class SearchPokemon extends React.Component {
             onChange={action}
           />
         </form>
+      </div>
     );
   }
 }

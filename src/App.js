@@ -20,9 +20,10 @@ class App extends React.Component {
 
   handlePokemon(event) {
     const triggerValue = event.currentTarget.value;
+    const valueLower = triggerValue.toLowerCase();
     this.setState((prevState, props) => {
       const newState = { ...prevState.all };
-      newState.search = triggerValue;
+      newState.search = valueLower;
       return { all: newState };
     });
   }
