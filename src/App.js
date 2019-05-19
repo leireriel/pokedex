@@ -18,6 +18,15 @@ class App extends React.Component {
     this.favPokemon = this.favPokemon.bind(this);
   }
 
+  componentDidMount() {
+    const getItem = JSON.parse(localStorage.getItem('userPokemon'));
+    if (getItem !== null) {
+      this.setState({
+        all: getItem
+      });
+    }
+  }
+
   handlePokemon(event) {
     const triggerValue = event.currentTarget.value;
     const valueLower = triggerValue.toLowerCase();
@@ -38,8 +47,13 @@ class App extends React.Component {
         const index = newState.fav.indexOf(triggerId);
         newState.fav.splice(index, 1);
       }
+      this.saveData(newState);
       return { all: newState };
     });
+  }
+
+  saveData(obj) {
+    localStorage.setItem('userPokemon', JSON.stringify(obj))
   }
 
   render() {
