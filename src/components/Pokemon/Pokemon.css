@@ -4,10 +4,16 @@
   align-items: center;
 }
 
+.img__pokemon {
+  position: relative;
+  top: 33px;
+}
+
 .name__pokemon {
   text-transform: capitalize;
-  border-top: 1px solid yellowgreen;
-  border-bottom: 1px solid yellowgreen;
+  box-shadow: inset 0 0 30px white, 0 0 30px white;
+  border-radius: 3px;
+  padding: 0 3px;
 }
 
 .list__types {

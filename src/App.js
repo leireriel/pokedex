@@ -32,9 +32,9 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="title">Mi lista de pokemon</h1>
+        <h1 className="title">Pokédex</h1>
         <PokeList
-          data={this.state.all.data}
+          state={this.state.all}
           action={this.favPokemon}
         />
       </React.Fragment>

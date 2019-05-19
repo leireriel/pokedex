@@ -5,13 +5,14 @@ import './PokeList.css';
 
 class PokeList extends React.Component {
   render() {
-    const { data, action } = this.props;
+    const { data, fav } = this.props.state;
+    const { action } = this.props;
     return (
       <ol className="list">
         {data.map((item) => {
           return (
             <li
-              className="list__item"
+              className={`list__item ${fav.includes(item.id - 1) && 'fav__pokemon'}`}
               key={item.id}
               id={item.id - 1}
               onClick={action}>
